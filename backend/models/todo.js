@@ -11,7 +11,7 @@ export const Todo = mongoose.model("Todo", todoSchema);
 async function connectToMongo() {
   try {
     await mongoose.connect(
-      "mongodb+srv://dipakhade214:TwF7ZImbgD5J5zkt@cluster0.saoibto.mongodb.net/portfolioconnect",
+      process.env.DATABASE_URL,
     );
     console.log("connected");
   } catch (error) {
